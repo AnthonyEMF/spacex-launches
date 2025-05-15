@@ -1,0 +1,18 @@
+---
+import LaunchCard from "./ui/LaunchCard.astro";
+import { getLatestLaunches } from "../core/actions/launches-action";
+
+const launches = await getLatestLaunches();
+---
+
+<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+  {launches.map(({ id, flight_number: flightNumber, details, links, success }) => (
+    <LaunchCard 
+      id={id}
+      flightNumber={flightNumber}
+      details={details}
+      img={links.patch.small}
+      success={success}
+    />
+  ))}
+</div>

@@ -1,0 +1,37 @@
+---
+import HeaderButton from "./ui/HeaderButton.astro";
+import Rocket from "../assets/icons/Rocket.astro";
+import Clock from "../assets/icons/Clock.astro";
+import Calendar from "../assets/icons/Calendar.astro";
+import BookOpen from "../assets/icons/BookOpen.astro";
+---
+
+<header class="py-8 px-4 mx-auto max-w-xl lg:py-16 lg:px-6">
+  <div class="mx-auto text-center mb-8 lg:mb-16">
+    <h2 class="text-5xl text-white tracking-tight font-extrabold mb-4">
+      SpaceX Launches <span>🚀</span>
+    </h2>
+    <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+      A website to showcase SpaceX launches
+    </p>
+  </div>
+
+  <nav class="flex flex-col items-center justify-between w-full text-center">
+    <HeaderButton href="/">
+      <Rocket slot="before-text" class="size-4" />
+      Latest Launches
+    </HeaderButton>
+    <HeaderButton href="/upcoming">
+      <Calendar slot="before-text" class="size-4" />
+      Upcoming Launches
+    </HeaderButton>
+    <HeaderButton href="/history">
+      <Clock slot="before-text" class="size-4" />
+      Launches History
+    </HeaderButton>
+    <HeaderButton href="/about">
+      <BookOpen slot="before-text" class="size-4" />
+      About SpaceX
+    </HeaderButton>
+  </nav>
+</header>

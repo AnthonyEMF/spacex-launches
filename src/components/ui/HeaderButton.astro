@@ -1,0 +1,11 @@
+<a
+  href={Astro.props.href}
+  class=" text-white hover:bg-slate-700 focus:ring-[#1dalf2]/50 dark:focus:ring-[#1dalf2]/55
+  flex justify-center items-center cursor-pointer text-center font-medium
+  rounded-lg gap-x-2 px-5 py-2.5 mr-2 mb-2 transition-all duration-200 ease-in-out
+  scale-90 hover:scale-110 opacity-70 hover:opacity-100 focus:ring-4 focus:outline-none hover:shadow-lg"
+>
+  <slot name="before-text" />
+  <slot />
+  <slot name="after-text" />
+</a>

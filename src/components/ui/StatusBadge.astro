@@ -1,0 +1,19 @@
+---
+interface Props {
+  success: boolean;
+}
+
+const { success } = Astro.props;
+---
+
+<span
+  class:list={[
+    "text-xs font-semibold px-2.5 py-0.5 rounded border-2",
+    {
+      "border-green-500 text-green-500": success,
+      "border-red-500 text-red-500": !success,
+    },
+  ]}
+>
+  {success ? "SUCCESS" : "FAILED"}
+</span>
